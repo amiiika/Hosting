@@ -1,0 +1,77 @@
+<div class="tutorial">
+    <h2>1: Introduksjon</h2>
+    <p>I denne brukertutorial skal jeg vise deg hvordan du kan hoste din egen
+        nettside ved hjelp av Heroku.
+        Turorialen tar i utgangspunkt at du allerede har en bruker klar.
+        Om du ikke har det kan du regsistrere deg her:
+        <a href="https://signup.heroku.com/">Heroku Register</a>.
+    </p>
+
+    <h2>2: Last ned Heroku</h2>
+    <p>I dette trinnet laster du ned Heroku CLI (Command Line Interface).
+        Du bruker dette for å administrere og skalere applikasjonene dine.
+
+        Gå til
+        <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up">Heroku SetUp</a>
+        og installer programmet for din plattform.
+        <img class="image" src="src/installer.png" alt="Install heroku on different platforms">
+
+        <br><br>
+        Åpne opp terminalen din og bruk kommandoen <span class="code">heroku login</span>
+        for å logge in i brukeren din.
+        <img src="src/herokuLogin.png" alt="Heroku login code">
+    </p>
+
+    <p>Du trenger å laste ned Git. Om du ikke allerede har det installert går du til
+        <a href="https://git-scm.com/downloads">Git Download</a>.
+    </p>
+
+    <h2>3: Klargjør appen</h2>
+    <p>Når vi laster opp prosjektet vårt til Heroku vil den velge en port for deg.
+        Derfor kan du ikke bare ha en lokal host port, du må i tilegg skrive
+        <span class="code">process.env.PORT.</span>
+        Dette er en dynamisk port som Heroku vil bestemme hva skal være.
+        <br>
+        <img src="src/applisten.png" alt="Dynamic port code">
+    </p>
+
+    <p>Du trenger en Procfile. Dette er filen som HEroku sjekker for å vite hvordan den skal hoste nettsiden din.
+        Lag en fil med navnet
+        <span class="code">Procfile</span>.
+
+        <br>
+        Inni denne filen skriver du hvordan du starter nettsiden din.
+        <span class="code">web: your-code</span>
+
+        <br>
+        Eksempel:
+        <img src="src/procfile.png" alt="Procfile code">
+
+    </p>
+    <p>Til slutt laster du opp alle filene dine til GitHub</p>
+
+    <h2>4: Implementer appen</h2>
+    <p>Lag en app på Heroku, med kommandoen <span class="code">heroku create</span>
+        som forbreder heroku til å ta imot koden din.
+        <img src="src/herokuCreate.png" alt="Heroku create code">
+        <br>
+        Heroku genererer et tilfeldig navn for nettsiden din, eller du kan sende en parameter for
+        å spesifisere ditt eget navn. Det gjør du ved å gi den et navn etter kommandoen.
+        <span class="code">heroku create name-of-app</span>.
+        <img src="src/herokuCreateName.png" alt=" Heroku create cutsom name code">
+
+        <br>
+        Når du oppretter en app, opprettes også en
+        git-remote (kalt heroku) og assosieres med ditt lokale git-repository.
+        <br>
+        Distribuer koden din med kommandoen <span class="code">git push heroku main</span>
+        <img src="src/PushHerokuMain.png" alt="git push code">
+    </p>
+
+    <h2>5: Åpne nettsiden din</h2>
+    <p>Besøk nå nettsiden på URL-en som nylig ble generert.
+        Som en praktisk snarvei kan du åpne nettstedet på følgende måte: <span class="code">heroku open</span>.
+        <img src="src/openHeroku.png" alt="Open website code">
+    </p>
+
+</div>
