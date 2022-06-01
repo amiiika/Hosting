@@ -24,7 +24,7 @@
         Åpne opp terminalen din og inni prosjektmappen din bruk kommandoen <span class="code">heroku login</span>
         for å logge in i brukeren din.
 
-    <pre><code  class="language-html"> $ heroku login
+    <pre><code  class="language-html highlight"> $ heroku login
 heroku: Press any key to open up the browser to login or q to exit
 › Warning: If browser does not open, visit
 › https://cli-auth.heroku.com/auth/browser/***
@@ -46,7 +46,7 @@ Logged in as me@example.com</code></pre>
         Dette er en dynamisk port som Heroku vil bestemme hva skal være.
         <br>
 
-    <pre><code>app.listen(process.env.PORT || 1000, function () {
+    <pre><code class="highlight">app.listen(process.env.PORT || 1000, function () {
     console.log("website is running");
 }); </code></pre>
 
@@ -60,34 +60,39 @@ Logged in as me@example.com</code></pre>
 
         <br><br>
         Eksempel:
-    <pre><code class="language-html">web: node <app class="js"></app></code></pre>
+    <pre><code class="language-html highlight">web: node <app class="js"></app></code></pre>
 
     </p>
-    <p>Til slutt laster du opp alle filene dine til GitHub</p>
+    <p>
+        <br>
+        Til slutt laster du opp alle filene dine til GitHub
+    </p>
 
     <!-- Step 4 -->
     <h2>4: Implementer appen</h2>
     <p>Lag en app på Heroku, med kommandoen <span class="code">heroku create</span>
-        som forbreder heroku til å ta imot koden din.
+        som forbreder heroku til å ta imot koden din.</p>
 
-    <pre><code class="language-html">$ heroku create
+    <pre><code class="language-html highlight">$ heroku create
 Creating sharp-rain-871... done, stack is heroku-18
 http://sharp-rain-871.herokuapp.com/ | https://git.heroku.com/sharp-rain-871.git
 Git remote heroku added</code></pre>
 
-    <br>
+    <p>
+        <br>
     Heroku genererer et tilfeldig navn for nettsiden din, eller du kan sende en parameter for
     å spesifisere ditt eget navn. Det gjør du ved å gi den et navn etter kommandoen.
+    </p>
+    <pre><code class="language-html highlight">$ heroku create name-of-app</code></pre>
 
-    <pre><code class="language-html">$ heroku create name-of-app</code></pre>
 
-
-    <br>
+    <p>
+        <br>
     Når du oppretter en app, opprettes også en
     git-remote (kalt heroku) og assosieres med ditt lokale git-repository.
     Distribuer koden din med kommandoen <span class="code">git push heroku your-branch-name</span>
-
-    <pre><code class="language-html">$ git push heroku main
+    </p>
+    <pre><code class="language-html highlight">$ git push heroku main
 Counting objects: 488, done.
 Delta compression using up to 8 threads.
 Compressing objects: 100% (367/367), done.
@@ -135,7 +140,7 @@ To https://git.heroku.com/nameless-savannah-4829.git
         Som en praktisk snarvei kan du åpne nettstedet på følgende måte: <span class="code">heroku open</span>.
         <br>
         Kos deg med din nye nettside!
-    <pre><code>$ heroku open </code></pre>
+    <pre><code class="highlight">$ heroku open </code></pre>
     </p>
 
 </div>
