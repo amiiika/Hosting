@@ -196,6 +196,11 @@ input:checked+.slider:before {
     /* media */
     
     @media (max-width:62em) {
+        /* Section */
+            section {
+                padding: 10px;
+        
+            }
     
         /* title */
         .title {
