@@ -7,12 +7,15 @@
                     <div>
                         <div id="mainContent">
                             <h1 class="title">Hvordan hoste en nettside med GitHub</h1>
-                            <p>Video kommer</p>
-
+                            <div class="videoContent">
+                                <iframe class="movie" src="src/github.mp4" frameborder="0" border="0" cellspacing="0"></iframe>
+                            </div>
                         </div>
                         <div class="hidden" id="secondaryContent">
                             <h1 class="title">Hvordan hoste en nettside med Heroku</h1>
-                            <p>video kommer</p>
+                            <div class="videoContent">
+                                <iframe class="movie" src="src/heroku.mp4" frameborder="0" border="0" cellspacing="0"></iframe>
+                            </div>
                         </div>
                     </div>
 
@@ -27,10 +30,11 @@
     </header>
     <section>
         <div id="mainText">
-            <%- include("partials/heroku") %>
+            <%- include("partials/githubTutorial") %>
 
         </div>
         <div class="hidden" id="secondaryText">
+            <%- include("partials/herokuTutorial") %>
         </div>
     </section>
 

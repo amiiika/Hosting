@@ -1,0 +1,141 @@
+<div class="tutorial">
+
+    <!-- Step 1 -->
+    <h2>1: Introduksjon</h2>
+    <p>I denne brukermanualen skal jeg vise deg hvordan du kan hoste din egen
+        nettside ved hjelp av Heroku.
+        Turorialen tar i utgangspunkt at du allerede har en bruker klar.
+        Om du ikke har det kan du regsistrere deg her:
+        <a href="https://signup.heroku.com/" target="_blank">Heroku Register</a>.
+    </p>
+
+    <!-- Step 2 -->
+    <h2>2: Last ned Heroku</h2>
+    <p>I dette trinnet laster du ned Heroku CLI (Command Line Interface).
+        Du bruker dette for å administrere og skalere applikasjonene dine. Gå til
+        <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up" target="_blank">
+            Heroku SetUp</a>
+
+        og installer programmet for din plattform.
+    </p>
+    <img class="image" src="src/installer.png" alt="Install heroku on different platforms">
+    <p>
+        <br>
+        Åpne opp terminalen din og inni prosjektmappen din bruk kommandoen <span class="code">heroku login</span>
+        for å logge in i brukeren din.
+
+    <pre><code  class="language-html"> $ heroku login
+heroku: Press any key to open up the browser to login or q to exit
+› Warning: If browser does not open, visit
+› https://cli-auth.heroku.com/auth/browser/***
+heroku: Waiting for login...
+Logging in... done
+Logged in as me@example.com</code></pre>
+
+    </p>
+
+    <p>Du trenger å laste ned Git. Om du ikke allerede har det installert går du til
+        <a href="https://git-scm.com/downloads" target="_blank">Git Download</a>.
+    </p>
+
+    <!-- Step 3 -->
+    <h2>3: Klargjør appen</h2>
+    <p>Når vi laster opp prosjektet vårt til Heroku vil den velge en port for deg.
+        Derfor kan du ikke bare ha en lokal host port, du må i tilegg skrive
+        <span class="code">process.env.PORT.</span>
+        Dette er en dynamisk port som Heroku vil bestemme hva skal være.
+        <br>
+
+    <pre><code>app.listen(process.env.PORT || 1000, function () {
+    console.log("website is running");
+}); </code></pre>
+
+    </p>
+
+    <p>Du trenger en Procfile. Dette er filen som HEroku sjekker for å vite hvordan den skal hoste nettsiden din.
+        Lag en fil med navnet
+        <span class="code">Procfile</span>.
+        Inni denne filen skriver du hvordan du starter nettsiden din.
+        <span class="code">web: your-code</span>
+
+        <br><br>
+        Eksempel:
+    <pre><code class="language-html">web: node <app class="js"></app></code></pre>
+
+    </p>
+    <p>Til slutt laster du opp alle filene dine til GitHub</p>
+
+    <!-- Step 4 -->
+    <h2>4: Implementer appen</h2>
+    <p>Lag en app på Heroku, med kommandoen <span class="code">heroku create</span>
+        som forbreder heroku til å ta imot koden din.
+
+    <pre><code class="language-html">$ heroku create
+Creating sharp-rain-871... done, stack is heroku-18
+http://sharp-rain-871.herokuapp.com/ | https://git.heroku.com/sharp-rain-871.git
+Git remote heroku added</code></pre>
+
+    <br>
+    Heroku genererer et tilfeldig navn for nettsiden din, eller du kan sende en parameter for
+    å spesifisere ditt eget navn. Det gjør du ved å gi den et navn etter kommandoen.
+
+    <pre><code class="language-html">$ heroku create name-of-app</code></pre>
+
+
+    <br>
+    Når du oppretter en app, opprettes også en
+    git-remote (kalt heroku) og assosieres med ditt lokale git-repository.
+    Distribuer koden din med kommandoen <span class="code">git push heroku your-branch-name</span>
+
+    <pre><code class="language-html">$ git push heroku main
+Counting objects: 488, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (367/367), done.
+Writing objects: 100% (488/488), 231.85 KiB | 115.92 MiB/s, done.
+Total 488 (delta 86), reused 488 (delta 86)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Node.js app detected
+remote:
+remote: -----> Creating runtime environment
+remote:
+remote: NPM_CONFIG_LOGLEVEL=error
+remote: NODE_VERBOSE=false
+remote: NODE_ENV=production
+remote: NODE_MODULES_CACHE=true
+remote:
+remote: -----> Installing binaries
+remote: engines.node (package.json): 14.x
+remote: engines.npm (package.json): unspecified (use default)
+remote:
+remote: Resolving node version 14.x...
+remote: Downloading and installing node 14.15.4...
+remote: Using default npm version: 6.14.11
+....
+remote: -----> Build succeeded!
+remote: -----> Discovering process types
+remote: Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote: Done: 19M
+remote: -----> Launching...
+remote: Released v3
+remote: http://sharp-rain-871.herokuapp.com deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/nameless-savannah-4829.git
+* [new branch] main -> main
+    </code></pre>
+    </p>
+
+    <!-- step 5 -->
+    <h2>5: Åpne nettsiden din</h2>
+    <p>Besøk nå nettsiden på URL-en som nylig ble generert av Heroku.
+        Som en praktisk snarvei kan du åpne nettstedet på følgende måte: <span class="code">heroku open</span>.
+        <br>
+        Kos deg med din nye nettside!
+    <pre><code>$ heroku open </code></pre>
+    </p>
+
+</div>
